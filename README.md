@@ -21,13 +21,15 @@ Examples can be found in the repository, examples include:
 
 * Get simple info (name, last name)
 * Share a post
-
+* Reusing a consumer token stored in a database
 
 Reusing user tokens
 =========
 Store tokens from getTokenData().
 Use SimpleLinkedIn::setTokenData('USER_TOKEN') to reuse a stored token BEFORE calling authorize()!
-
+When reusing tokens its important to try {} catch calls to fetch() and 
+check if the response status code is 401 and then reauthorize a token if that happens.
+For more info on the subject check see [the reusing tokens example](examples/reusing-tokens.php).
 
 JSON vs XML
 =========
